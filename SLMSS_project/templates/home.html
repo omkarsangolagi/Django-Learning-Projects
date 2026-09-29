@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Welcome{% endblock %}
+{% block content %}
+<section class="hero">
+  <div>
+    <p class="eyebrow">Simple leave administration</p>
+    <h1>Leave management that keeps <span>people moving.</span></h1>
+    <p class="hero-copy">Submit leave requests, follow their status, and give administrators a clear view of every application — all in one place.</p>
+    <div class="button-row"><a class="btn btn-primary" href="{% url 'login' %}">Sign in</a><a class="btn btn-secondary" href="{% url 'register' %}">Create an account</a></div>
+  </div>
+  <aside class="hero-panel">
+    <h2>Everything in one workspace</h2>
+    <div class="quick-stat"><span class="stat-icon">✓</span><div><strong>Easy requests</strong><small>Apply with a few details.</small></div></div>
+    <div class="quick-stat"><span class="stat-icon">◷</span><div><strong>Clear status</strong><small>See updates as they happen.</small></div></div>
+    <div class="quick-stat"><span class="stat-icon">⌁</span><div><strong>Staff oversight</strong><small>Review and manage applications.</small></div></div>
+  </aside>
+</section>
+{% endblock %}

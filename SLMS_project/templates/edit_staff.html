@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+    <h2>Edit staff</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <label>username</label>
+        <input type="text" name="username" value="{{staff.username}}" required> <br><br>
+
+        <label>new password</label>
+        <input type="password" name="password" placeholder="leave blank to keep current password"><br><br>
+
+        <button type="submit">Update staff</button><br><br>
+    </form>
+    <a href="{% url 'manage_staff' %}">Back to Manage staff</a>
+    </center>
+</body>
+</html>

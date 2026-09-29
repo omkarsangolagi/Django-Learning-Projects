@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h2 style="font-size: 55px;">Apply Leave</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label style="font-size: 25px;" for="">Leave Type: </label>
+        <select style="font-size: 25px;" name="leave_type" id="" required>
+            <option value="">Select</option>
+            <option value="">Casual Leave</option>
+            <option value="">Sick Leave</option>
+            <option value="">Emergency Leave</option>
+        </select> <br> <br>
+        <label style="font-size: 25px;" for="">Start Date</label>
+        <input style="font-size: 25px;" type="date" name="start" id=""> <br> <br>
+        <label style="font-size: 25px;" for="">End Date</label>
+        <input style="font-size: 25px;" type="date" name="end" id=""> <br> <br>  
+        <label style="font-size: 25px;" for="">Reason</label> <br>
+        <textarea style="font-size: 18px;" name="" id="" cols="30" rows="10"></textarea> <br> <br>
+        <button style="font-size: 25px;" type="submit">Submit</button>
+    </form>
+    </center>
+</body>
+</html>

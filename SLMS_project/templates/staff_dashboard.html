@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <a>SLMS - staff</a>
+        
+        <button><a href="{% url 'logout' %}">Logout</a></button>
+    </nav>
+    <h3>Welcome, {{ request.user.username }}</h3>
+    <h5>apply leave</h5>
+    <p>aubmit a new leave request</p>
+    <a href="#">apply</a>
+
+    <h5>my leave status</h5>
+    <p>view your leave requests</p>
+    <a href="#">View</a>
+
+</body>
+</html>

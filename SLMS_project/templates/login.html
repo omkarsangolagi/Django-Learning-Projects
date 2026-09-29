@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>SLMS Login </h1>
+        <h2>Staff Leave management system</h2>
+        <form method="post">
+            {% csrf_token %}
+            <label>username :</label>
+            <input type="text" name="username" placeholder="username">
+
+            <br><br>
+
+            <label>password :</label>
+            <input type="password" name="password" placeholder="password">
+            <br><br>
+
+            <button type="submit">Submit</button>
+
+        </form>
+        <p>Not Registered yet <a href="{% url 'register' %}">Register</a></p>
+        <p><a href="{% url 'home' %}">back to home</a></p>
+    </center>
+</body>
+</html>

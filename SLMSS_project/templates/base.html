@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1d4ed8">
+    <title>{% block title %}SLMS{% endblock %} | Staff Leave Management</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header class="site-header">
+        <div class="nav-wrap">
+            <a class="brand" href="{% url 'home' %}"><span class="brand-mark">S</span><span>SLMS</span></a>
+            <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+            <nav class="site-nav" aria-label="Main navigation">
+                <a href="{% url 'home' %}">Home</a>
+                {% if request.user.is_authenticated %}
+                    {% if request.user.profile.role == 'admin' %}
+                        <a href="{% url 'admin_dashboard' %}">Dashboard</a>
+                        <a href="{% url 'manage_staff' %}">Staff</a>
+                    {% else %}
+                        <a href="{% url 'staff_dashboard' %}">Dashboard</a>
+                        <a href="{% url 'my_leaves' %}">My leave</a>
+                    {% endif %}
+                    <a class="nav-logout" href="{% url 'logout_view' %}">Sign out</a>
+                {% else %}
+                    <a href="{% url 'login' %}">Sign in</a>
+                    <a class="nav-cta" href="{% url 'register' %}">Create account</a>
+                {% endif %}
+            </nav>
+        </div>
+    </header>
+    <main>{% block content %}{% endblock %}</main>
+    <footer class="site-footer"><p>© 2026 SLMS · Staff Leave Management System</p></footer>
+    <script src="{% static 'js/app.js' %}"></script>
+</body>
+</html>
